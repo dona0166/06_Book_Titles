@@ -2,13 +2,26 @@
 {
     public class Book
     {
-        public string Title(string something)
+        string somestring = "";
+        
+        public string Title
+        {
+            get { return CutString(somestring); }
+            set { this.somestring = value; }
+        }
+
+        
+
+        public string CutString(string something)
         {
             string result = "";
             string[] anarray = something.Split(' ');
+           
+ 
             for(int i = 0; i<anarray.Length; i++)
             {
-                if(anarray[i] == "the" || anarray[i] == "a" || anarray[i] == "an" || anarray[i] == "and")
+                if(anarray[i] == "the" || anarray[i] == "a" || anarray[i] == "an" 
+                    || anarray[i] == "and" || anarray[i] =="in" || anarray[i] == "of")
                 {
                     if(i == 0)
                     {
@@ -26,5 +39,6 @@
             }
             return result.Trim();
         }
+        
     }
 }
